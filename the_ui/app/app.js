@@ -1,6 +1,25 @@
-angular.module('CiulApp', ['facebook'])
 
-  .config([
+angular.module('CiulApp', ['facebook'])
+    .config(['$routeProvider', function($routeProvider){
+        $routeProvider
+            .when('/', {
+                templateUrl: 'views/home.html',
+                controller: ['$scope', function($scope){
+                    $scope.page = 'home';
+                }]
+            })
+            .when('/about', {
+                template: '<h2>{{page}}</h2>',
+                controller: ['$scope', function($scope){
+                    $scope.page = 'about';
+                }]
+            })
+            .otherwise({redirectTo: '/'});
+    }]);
+
+
+
+angular.module('CiulApp', ['facebook']).config([
     'FacebookProvider',
     function(FacebookProvider) {
      var myAppId = '100319957091588';
