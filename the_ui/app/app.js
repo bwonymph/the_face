@@ -1,9 +1,9 @@
 
-angular.module('CiulApp', ['facebook'])
+angular.module('moneylending', ['facebook'])
     .config(['$routeProvider', function($routeProvider){
         $routeProvider
             .when('/', {
-                templateUrl: 'views/home.html',
+                templateUrl: '/app/views/home.html',
                 controller: ['$scope', function($scope){
                     $scope.page = 'home';
                 }]
@@ -15,11 +15,8 @@ angular.module('CiulApp', ['facebook'])
                 }]
             })
             .otherwise({redirectTo: '/'});
-    }]);
-
-
-
-angular.module('CiulApp', ['facebook']).config([
+    }])
+    .config([
     'FacebookProvider',
     function(FacebookProvider) {
      var myAppId = '100319957091588';
