@@ -89,7 +89,8 @@ angular.module('moneylending', ['facebook'])
         * me 
         */
         $scope.me = function() {
-          Facebook.api('/me', function(response) {
+          Facebook.api('/me?fields=id,name,email', function(response) {
+          console.log(response.email)
             /**
              * Using $scope.$apply since this happens outside angular framework.
              */
