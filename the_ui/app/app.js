@@ -20,14 +20,6 @@ angular.module('moneylending', ['facebook'])
     'FacebookProvider',
     function(FacebookProvider) {
      var myAppId = '100319957091588';
-     
-     // You can set appId with setApp method
-     // FacebookProvider.setAppId('myAppId');
-     
-     /**
-      * After setting appId you need to initialize the module.
-      * You can pass the appId on the init method as a shortcut too.
-      */
      FacebookProvider.init(myAppId);
      
     }
@@ -103,6 +95,7 @@ angular.module('moneylending', ['facebook'])
              */
             $scope.$apply(function() {
               $scope.user = response;
+              console.log(response)
             });
             
           });
